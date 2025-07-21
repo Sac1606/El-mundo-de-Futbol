@@ -1,0 +1,1000 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Robot, Arial;
+    text-decoration: none;
+}
+
+html,
+body {
+    width: 100%;
+    background-color: none;
+    max-width: 100%;
+    overflow-x: clip;
+    animation: fadeInSlide 0.8s ease-out forwards;
+}
+
+body::before {
+    position: absolute;
+    width: min(1400px, 90vw);
+    top: 10%;
+    left: 50%;
+    height: 90%;
+    transform: translateX(-50%);
+    content: '';
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: top center;
+    pointer-events: none;
+}
+
+@keyframes fadeInSlide {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.sectionProduct {
+    padding: 40px 80px;
+}
+
+.sectionBaner {
+    margin: 40px 0;
+}
+
+/*------------------------------------------------- Header  ------------------------------------------------------*/
+.logo {
+    height: 65px;
+    background-color: transparent;
+}
+
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 80px;
+    background-color: rgb(11, 15, 51);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.10);
+    z-index: 1000;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+#nevbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#nevbar li {
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
+}
+
+#nevbar li a {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+    transition: color 0.15s ease;
+}
+
+#nevbar li a:hover,
+#nevbar li a.active {
+    color: cyan
+}
+
+#nevbar li a.active::after {
+    content: "";
+    width: 40%;
+    height: 2px;
+    background-color: white;
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+}
+
+#nevbar li a::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    background-color: white;
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+    transition: width 0.2s;
+}
+
+#nevbar li a:hover::after {
+    width: 40%;
+}
+
+
+/* -------------------------------------------  Home ------------------------------------------------------------------------ */
+/*
+model-viewer {
+    height: 400px;
+}
+*/
+
+#principal {
+    background-image: url(MadridFondo.webp);
+    height: 90vh;
+    width: 100%;
+    background-size: cover;
+    background-position: top 25% right 0;
+    padding: 0 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    color: white;
+}
+
+
+#principal h2 {
+    font-size: 3rem;
+    margin: 0 0 10px;
+    line-height: 1.4;
+    font-weight: 700;
+
+}
+
+#principal h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+#principal button {
+    background-color: #ffffff;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+#principal button:hover {
+    background-color: #ccc;
+}
+
+#products h1 {
+    font-size: 2.5rem;
+}
+
+#products {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+#products .productContainer {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 20px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+#products .product {
+    width: 23%;
+    min-width: 250px;
+    padding: 10px 12px;
+    border: 1px solid;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.02);
+    margin: 15px 0;
+    position: relative;
+    transition: box-shadow 0.15s ease;
+}
+
+#products .product:hover {
+    box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.10);
+}
+
+
+#products .shirt-container {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    position: relative;
+    overflow: hidden;
+}
+
+#products .title {
+    width: 100%;
+}
+
+
+#products .shirt-container .shirt {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.85s;
+}
+
+#products .shirt-container:hover .shirt {
+    transform: rotateY(180deg);
+}
+
+#products .shirt-container .shirt img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    backface-visibility: hidden;
+    border-radius: 10px;
+}
+
+#products .shirt-container .shirt .back {
+    transform: rotateY(180deg);
+}
+
+#banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    color: white;
+    background-image: url(fondoGuatemala.jpeg);
+    width: 100%;
+    height: 50vh;
+    background-size: cover;
+    background-position: center;
+}
+
+#banner h2 {
+    font-size: 4rem;
+}
+
+#banner h4 {
+    font-size: 2rem;
+}
+
+#banner2 {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+#banner2 a {
+    text-decoration: none;
+}
+
+#banner2 .banner2-container h3 {
+    font-size: 2.5rem;
+    z-index: 2;
+}
+
+#banner2 .banner2-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    color: white;
+    background-image: url(MadridFondo1.webp);
+    width: 850px;
+    height: 50vh;
+    background-size: cover;
+    background-position: center;
+    padding: 30px;
+    margin-bottom: 50px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+#banner2 .banner2-container {
+    width: 23%;
+    min-width: 850px;
+    padding: 10px 12px;
+    border: 1px solid;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.02);
+    margin: 15px 0;
+    position: relative;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+}
+
+
+#banner2 .banner2-container:hover {
+    transform: scale(1.03);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+#banner2 .banner2-container::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0);
+    /* inicio transparente */
+    transition: background 0.4s ease;
+    z-index: 1;
+}
+
+#banner2 .banner2-container:hover::before {
+    background: rgba(0, 0, 0, 0.3);
+
+}
+
+
+#banner2 #banner2-con {
+    background-color: #000;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    flex-wrap: wrap;
+}
+
+#banner2 .banner2-container2 {
+    background-image: url(Milan\ fondo.webp);
+}
+
+
+
+
+#banner3 h2 {
+    font-size: 4rem;
+}
+
+#banner3 h4 {
+    font-size: 2rem;
+}
+
+.banner3 {
+    width: 100%;
+    height: 70vh;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    background-color: #6A6E71;
+    background-image:
+        repeating-linear-gradient(to right, transparent 0 100px,
+            #25283b22 100px 103px),
+        repeating-linear-gradient(to bottom, transparent 0 100px,
+            #25283b22 100px 103px);
+}
+
+.banner3 .slider {
+    position: absolute;
+    width: 200px;
+    height: 250px;
+    top: 10%;
+    left: calc(50% - 100px);
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    animation: autoRun 20s infinite linear;
+    margin-top: 150px;
+}
+
+@keyframes autoRun {
+    from {
+        transform: perspective(1000px) rotateY(0deg);
+    }
+
+    to {
+        transform: perspective(1000px) rotateY(360deg);
+    }
+}
+
+.banner3 .slider .item {
+    position: absolute;
+    inset: 0 0 0 0;
+    transform:
+        rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)) translateZ(550px);
+}
+
+.banner3 .slider .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+footer {
+    background-color: #000;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+footer .col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    padding: 10px;
+    gap: 6px;
+}
+
+footer .col h4 {
+    font-size: 2rem;
+}
+
+footer #socials {
+    display: flex;
+    align-items: center;
+}
+
+footer #ball {
+    margin-top: 2.5%;
+}
+
+footer #socials a {
+    height: 20%;
+    font-size: 1.8rem;
+}
+
+footer .col p,
+footer .col a {
+    font-size: 1rem;
+    line-height: 1.5;
+    text-decoration: none;
+    color: white;
+}
+
+
+footer .copyright {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid #444;
+    padding-top: 10px;
+    font-size: 14px;
+    color: #ccc;
+}
+
+footer .col a:hover {
+    color: #00aced;
+    /* azul tenue */
+    transition: color 0.3s ease;
+    text-decoration: underline;
+}
+
+model-viewer {
+    opacity: 0.8;
+}
+
+
+/*------------------------------------------------- mapa ------------------------------------------------------*/
+
+#principalMap {
+    height: 95vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: #0b0f33;
+}
+
+.escena {
+    width: 100vw;
+    height: 100vh;
+    perspective: 800px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.mapa {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.3);
+    animation: zoomToNormal 1s ease-in-out forwards;
+    z-index: 1;
+    width: 1590px;
+    max-width: 100%;
+    height: auto;
+}
+
+.choose-continent {
+    font-family: Robot, Arial;
+    font-size: 2.4rem;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 30px;
+    animation: fadeInSlide 1s ease-out forwards;
+    opacity: 0;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Animación para entrada suave */
+@keyframes fadeInSlide {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: translateZ(0px);
+    }
+
+    to {
+        transform: translateZ(500px) scale(2);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes flotacion {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes zoomToNormal {
+    from {
+        transform: translate(-50%, -50%) scale(0.3);
+    }
+
+    to {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+#Asia,
+#Europa,
+#Africa,
+#NorteAmerica,
+#SurAmerica,
+#Oceania {
+    transition: transform 0.3s ease, fill 0.3s ease;
+    cursor: pointer;
+}
+
+#Asia:hover,
+#Europa:hover,
+#Africa:hover,
+#NorteAmerica:hover,
+#SurAmerica:hover,
+#Oceania:hover {
+    transform: scale(1.01);
+    fill: #006400;
+}
+
+#bloqueoAccion {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: transparent;
+    z-index: 10;
+    pointer-events: all;
+}
+
+
+@media (max-width: 768px) {
+    #text {
+        font-size: 6vw;
+        height: auto;
+    }
+
+    .mapa {
+        transform: translate(-50%, -50%) scale(0.5);
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/*------------------------------------------------- About ------------------------------------------------------*/
+
+#about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    height: 90vh;
+}
+
+#about h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.aboutContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: calc(100vh - 120px);
+    /* ajusta esto según el tamaño del header + título */
+}
+
+.aboutContent p {
+    max-width: 800px;
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 1.5rem;
+}
+
+/*------------------------------------------------- Cart ------------------------------------------------------*/
+
+
+.empty-cart {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #fff;
+    color: #222;
+    font-family: 'Segoe UI', sans-serif;
+    height: 90vh;
+}
+
+.empty-cart-img {
+    max-width: 300px;
+    margin-bottom: 20px;
+    opacity: 0.85;
+}
+
+.empty-cart h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.empty-cart p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.btn-go-shop {
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: #00ffff;
+    color: #000;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-go-shop:hover {
+    background-color: #00cccc;
+}
+
+
+/*------------------------------------------------- Media Queries ------------------------------------------------------*/
+
+
+
+
+
+@media (max-width: 1900px) {
+    #banner2 .banner2-container {
+        min-width: 850px;
+    }
+
+    #banner2 {
+        align-items: center;
+        justify-content: center;
+
+    }
+}
+
+
+
+@media (max-width: 1024px) {
+    #banner2 .banner2-container {
+        min-width: 850px;
+    }
+
+    #banner2 {
+        align-items: center;
+        justify-content: center;
+
+    }
+}
+
+@media (max-width: 900px) {
+    #banner2 .banner2-container {
+        min-width: 700px;
+    }
+
+    #banner2 {
+        align-items: center;
+        justify-content: center;
+
+    }
+}
+
+@media (max-width: 853px) {
+    #banner2 .banner2-container {
+        min-width: 660px;
+    }
+}
+
+@media (max-width: 768px) {
+    #banner2 .banner2-container {
+        min-width: 650px;
+    }
+}
+
+@media (max-width: 659px) {
+    #banner2 .banner2-container {
+        min-width: 610px;
+    }
+
+    #products .product {
+        width: 100%;
+    }
+
+    #products {
+        justify-content: center;
+    }
+
+}
+
+@media (max-width: 520px) {
+    #banner2 .banner2-container {
+        min-width: 400px;
+    }
+}
+
+@media (max-width: 430px) {
+    #banner2 .banner2-container {
+        min-width: 330px;
+    }
+
+    #products {
+        justify-content: center;
+    }
+
+    #products .product {
+        width: 100%;
+    }
+
+    .escena {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        display: flex;
+    }
+
+    .mapa {
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%) scale(0.25);
+        margin: 0 auto;
+        display: block;
+    }
+
+    .logo {
+        height: 50px;
+    }
+
+    #header {
+        padding: 15px;
+    }
+
+    #nevbar li {
+        padding: 0 10px;
+    }
+
+    #principal h2 {
+        font-size: 1.70rem;
+        margin: 0 0 3px;
+        line-height: 1.4;
+        font-weight: 700;
+
+    }
+
+    #principal h3 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+
+    #banner h2 {
+        font-size: 2.5rem;
+    }
+
+    #banner h4 {
+        font-size: 1.8rem;
+    }
+
+    #banner2 {
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    #products .product {
+        width: 100%;
+    }
+
+    #products {
+        justify-content: center;
+    }
+
+    footer {
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 414px) {
+    #banner2 .banner2-container {
+        min-width: 300px;
+    }
+
+    .logo {
+        height: 50px;
+    }
+
+    #header {
+        padding: 15px;
+    }
+
+    #nevbar li {
+        padding: 0 10px;
+    }
+
+    #principal h2 {
+        font-size: 1.70rem;
+        margin: 0 0 3px;
+        line-height: 1.4;
+        font-weight: 700;
+
+    }
+
+    #principal h3 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+
+    #banner h2 {
+        font-size: 2.5rem;
+    }
+
+    #banner h4 {
+        font-size: 1.8rem;
+    }
+
+    #banner2 {
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    #products .product {
+        width: 100%;
+    }
+
+    #products {
+        justify-content: center;
+    }
+
+    footer {
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 375px) {
+
+
+    .logo {
+        height: 50px;
+    }
+
+    #header {
+        padding: 15px;
+    }
+
+    #nevbar li {
+        padding: 0 10px;
+    }
+
+    #principal h2 {
+        font-size: 1.70rem;
+        margin: 0 0 3px;
+        line-height: 1.4;
+        font-weight: 700;
+
+    }
+
+    #principal h3 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+
+    #banner h2 {
+        font-size: 2.5rem;
+    }
+
+    #banner h4 {
+        font-size: 1.8rem;
+    }
+
+    #banner2 {
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    #banner2 .banner2-container {
+        min-width: 290px;
+    }
+
+    #products .product {
+        width: 100%;
+    }
+
+
+    footer {
+        align-items: center;
+        justify-content: center;
+    }
+
+}
+
+
+/*-------------------------------------------------- Apear ------------------------------------------------------*/
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        scale: 0.5;
+    }
+
+    to {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+.apear {
+    animation: appear 5s linear;
+    animation-timeline: view();
+    animation-range: entry 0 cover 40%;
+}
